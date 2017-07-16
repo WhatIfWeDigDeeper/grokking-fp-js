@@ -1,0 +1,37 @@
+{
+  "name": "grokking-fp-js",
+  "version": "1.0.0",
+  "description": "JavaScript examples for Manning.com Book, \"Grokking Functional Programming\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhatIfWeDigDeeper/grokking-fp-js.git"
+  },
+  "keywords": [
+    "functional",
+    "programming",
+    "javascript",
+    "es6"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WhatIfWeDigDeeper/grokking-fp-js/issues"
+  },
+  "homepage": "https://github.com/WhatIfWeDigDeeper/grokking-fp-js#readme",
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^20.0.4"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
