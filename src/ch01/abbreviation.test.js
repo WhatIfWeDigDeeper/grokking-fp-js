@@ -1,5 +1,3 @@
-// import * as fp from 'lodash/fp';
-
 const abbreviateName = (name) => {
   const names = name.split(' ');
   const initial = names[0].charAt(0);
