@@ -1,4 +1,3 @@
-import flow from 'lodash/fp/flow';
 import head from 'lodash/fp/head';
 import tail from 'lodash/fp/tail';
 import compose from 'lodash/fp/compose';
@@ -6,7 +5,7 @@ import compose from 'lodash/fp/compose';
 const splitBySpace = (val) => val.split(' ');
 
 const firstInitial = (name) => (
-  flow(splitBySpace, head, head)(name)
+  compose(head, head, splitBySpace)(name)
 );
 
 const lastName = (name) => (
