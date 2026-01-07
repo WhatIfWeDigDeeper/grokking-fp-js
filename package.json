@@ -9,7 +9,19 @@
     "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,md,js}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,json,md,js}\"",
-    "check": "npx tsc --noEmit && npm test && npm run lint && npm run format:check"
+    "check": "npx tsc --noEmit && npm test && npm run lint && npm run format:check",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "src/**/*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -36,7 +48,9 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^9.1.7",
     "jest": "^30.2.0",
+    "lint-staged": "^16.2.7",
     "lodash": "^4.17.21",
     "prettier": "^3.7.4",
     "ts-jest": "^29.4.6",
