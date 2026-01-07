@@ -10,9 +10,7 @@ class Book {
 
 const sum = (a: number, b: number): number => a + b;
 
-const total = (books: any): number => (
-  books.map((x: any) => x.price).reduce(sum)
-);
+const total = (books: any): number => books.map((x: any) => x.price).reduce(sum);
 
 describe('Immutable', () => {
   it('should be immutable', () => {
@@ -22,10 +20,7 @@ describe('Immutable', () => {
   });
 
   it('should total books correctly', () => {
-    const books = [
-      new Book('1984', 10.99),
-      new Book('2001', 9.01)
-    ];
+    const books = [new Book('1984', 10.99), new Book('2001', 9.01)];
     expect(total(books)).toEqual(20.0);
-  })
+  });
 });
