@@ -10,7 +10,7 @@ class Book {
 
 const sum = (a: number, b: number): number => a + b;
 
-const total = (books: any): number => books.map((x: any) => x.price).reduce(sum);
+const total = (books: Book[]): number => books.map((x: Book) => x.price).reduce(sum);
 
 describe('Immutable', () => {
   it('should be immutable', () => {

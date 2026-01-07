@@ -1,8 +1,7 @@
-import tail from 'lodash/fp/tail';
-import isEmpty from 'lodash/fp/isEmpty';
-import drop from 'lodash/fp/drop';
-import curry from 'lodash/fp/curry';
 import compose from 'lodash/fp/compose';
+import curry from 'lodash/fp/curry';
+import drop from 'lodash/fp/drop';
+import isEmpty from 'lodash/fp/isEmpty';
 import join from 'lodash/fp/join';
 
 const dropSlice = (num: number, ary: string): string => (isEmpty(ary) ? ary : ary.slice(num));
