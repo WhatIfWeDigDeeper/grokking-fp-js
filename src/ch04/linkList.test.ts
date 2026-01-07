@@ -1,36 +1,32 @@
-import isEmpty from 'lodash/fp/isEmpty';
-import head from 'lodash/fp/head';
-import tail from 'lodash/fp/tail';
-
 // tail recursion
-const reverse = (xs: any, acc: any = []): any => (
-  isEmpty(xs)
+const reverse = <T>(xs: T[], acc: T[] = []): T[] => (
+  xs.length === 0
     ? acc
-    : reverse(tail(xs), [head(xs)].concat(acc))
+    : reverse(xs.slice(1), [xs[0]].concat(acc))
 );
 
 // using reduce (fold) fn
-const revReduce = (xs: any): any => (
-  xs.reduce((acc: any, x: any) => (
+const revReduce = <T>(xs: T[]): T[] => (
+  xs.reduce((acc: T[], x: T) => (
     [x].concat(acc)
   ), [])
 );
 
-const positionOf = (xs: any, x: any, acc: number = 0): number => {
-  if (isEmpty(xs)) {
+const positionOf = <T>(xs: T[], x: T, acc: number = 0): number => {
+  if (xs.length === 0) {
     return -1;
   }
-  return (head(xs) === x)
+  return (xs[0] === x)
     ? acc
-    : positionOf(tail(xs), x, acc + 1);
+    : positionOf(xs.slice(1), x, acc + 1);
 };
 
-const valueAt = (xs: any, i: number, acc: number = 0): any => {
-  if (isEmpty(xs))
+const valueAt = <T>(xs: T[], i: number, acc: number = 0): T | null => {
+  if (xs.length === 0)
     return null;
   return (i === acc)
-    ? head(xs)
-    : valueAt(tail(xs), i, acc + 1)
+    ? xs[0]
+    : valueAt(xs.slice(1), i, acc + 1)
 };
 
 describe('Reverse linked list', () => {

@@ -5,17 +5,17 @@ import curry from 'lodash/fp/curry';
 import compose from 'lodash/fp/compose';
 import join from 'lodash/fp/join';
 
-const dropSlice = (num: any, ary: any): any => (
+const dropSlice = (num: number, ary: string): string => (
   (isEmpty(ary))
     ? ary
     : ary.slice(num)
 );
 
 
-const dropRecursive = (num: any, ary: any): any => (
+const dropRecursive = (num: number, ary: string): string => (
   (isEmpty(ary) || num <= 0)
     ? ary
-    : dropRecursive(num - 1, tail(ary))
+    : dropRecursive(num - 1, ary.slice(1))
 );
 
 const aryToString = join('');
