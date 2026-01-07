@@ -15,12 +15,10 @@
   "lint-staged": {
     "src/**/*.{ts,tsx,js}": [
       "prettier --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
     "src/**/*.{json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "repository": {
