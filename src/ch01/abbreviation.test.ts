@@ -2,22 +2,22 @@ import head from 'lodash/fp/head';
 import tail from 'lodash/fp/tail';
 import compose from 'lodash/fp/compose';
 
-const splitBySpace = (val) => val.split(' ');
+const splitBySpace = (val: any): any => val.split(' ');
 
-const firstInitial = (name) => (
+const firstInitial = (name: any): any => (
   compose(head, head, splitBySpace)(name)
 );
 
-const lastName = (name) => (
+const lastName = (name: any): any => (
   compose(tail, splitBySpace)(name)
 );
 
-const abbrevName = (name) => (
+const abbrevName = (name: any): any => (
   `${firstInitial(name)}.${lastName(name)}`
 );
 
 // non-functional style
-const abbreviateName = (name) => {
+const abbreviateName = (name: any): any => {
   const names = name.split(' ');
   const initial = names[0].charAt(0);
   return `${initial}.${names[1]}`;

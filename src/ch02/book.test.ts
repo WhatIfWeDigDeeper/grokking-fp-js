@@ -1,15 +1,17 @@
 class Book {
-  constructor(title, price) {
+  title: string;
+  price: number;
+  constructor(title: string, price: number) {
     this.title = title;
     this.price = price;
     Object.freeze(this);
   }
 }
 
-const sum = (a, b) => a + b;
+const sum = (a: number, b: number): number => a + b;
 
-const total = (books) => (
-  books.map(x => x.price).reduce(sum)
+const total = (books: any): number => (
+  books.map((x: any) => x.price).reduce(sum)
 );
 
 describe('Immutable', () => {

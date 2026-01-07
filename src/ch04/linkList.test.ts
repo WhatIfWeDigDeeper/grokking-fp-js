@@ -3,20 +3,20 @@ import head from 'lodash/fp/head';
 import tail from 'lodash/fp/tail';
 
 // tail recursion
-const reverse = (xs, acc=[]) => (
+const reverse = (xs: any, acc: any = []): any => (
   isEmpty(xs)
     ? acc
     : reverse(tail(xs), [head(xs)].concat(acc))
 );
 
 // using reduce (fold) fn
-const revReduce = (xs) => (
-  xs.reduce((acc, x) => (
+const revReduce = (xs: any): any => (
+  xs.reduce((acc: any, x: any) => (
     [x].concat(acc)
   ), [])
 );
 
-const positionOf = (xs, x, acc=0) => {
+const positionOf = (xs: any, x: any, acc: number = 0): number => {
   if (isEmpty(xs)) {
     return -1;
   }
@@ -25,7 +25,7 @@ const positionOf = (xs, x, acc=0) => {
     : positionOf(tail(xs), x, acc + 1);
 };
 
-const valueAt = (xs, i, acc=0) => {
+const valueAt = (xs: any, i: number, acc: number = 0): any => {
   if (isEmpty(xs))
     return null;
   return (i === acc)
