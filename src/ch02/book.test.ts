@@ -1,16 +1,16 @@
 class Book {
-  constructor(title, price) {
+  title: string;
+  price: number;
+  constructor(title: string, price: number) {
     this.title = title;
     this.price = price;
     Object.freeze(this);
   }
 }
 
-const sum = (a, b) => a + b;
+const sum = (a: number, b: number): number => a + b;
 
-const total = (books) => (
-  books.map(x => x.price).reduce(sum)
-);
+const total = (books: Book[]): number => books.map((x: Book) => x.price).reduce(sum);
 
 describe('Immutable', () => {
   it('should be immutable', () => {
@@ -20,10 +20,7 @@ describe('Immutable', () => {
   });
 
   it('should total books correctly', () => {
-    const books = [
-      new Book('1984', 10.99),
-      new Book('2001', 9.01)
-    ];
+    const books = [new Book('1984', 10.99), new Book('2001', 9.01)];
     expect(total(books)).toEqual(20.0);
-  })
+  });
 });
