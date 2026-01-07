@@ -20,13 +20,13 @@ module.exports = [
     rules: {
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-      '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }],
-      '@typescript-eslint/explicit-module-boundary-types': 'warn',
-      '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
-      'no-console': ['warn', { allow: ['warn', 'error'] }],
-      'import/order': ['warn', { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'], alphabetize: { order: 'asc', caseInsensitive: true } }],
-      'prettier/prettier': ['warn', { singleQuote: true, trailingComma: 'all', printWidth: 100, semi: true }]
+      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
+      '@typescript-eslint/explicit-module-boundary-types': 'error',
+      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
+      'no-console': ['error', { allow: ['warn', 'error'] }],
+      'import/order': ['error', { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'], alphabetize: { order: 'asc', caseInsensitive: true } }],
+      'prettier/prettier': ['error', { singleQuote: true, trailingComma: 'all', printWidth: 100, semi: true }]
     }
   }
 ];
