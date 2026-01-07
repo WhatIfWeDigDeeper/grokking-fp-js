@@ -57,3 +57,5 @@ typings/
 # WebStorm
 .idea
 
+# Scala samples
+scala_samples
