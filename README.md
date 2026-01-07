@@ -1,3 +1,3 @@
 # grokking-fp-ts
 
-JavaScript examples for Manning.com Book, "Grokking Functional Programming"
+Typescript examples for Manning Book, [Grokking Functional Programming](https://www.manning.com/books/grokking-functional-programming), which uses Scala.
